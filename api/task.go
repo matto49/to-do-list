@@ -20,6 +20,7 @@ import (
 // @Success 200 {object} serializer.ResponseTask "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /task [post]
+// @Security ApiKeyAuth
 func CreateTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req types.CreateTaskReq
@@ -49,6 +50,7 @@ func CreateTaskHandler() gin.HandlerFunc {
 // @Success 200 {object} serializer.ResponseTask "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /tasks [get]
+// @Security ApiKeyAuth
 func ListTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req types.ListTasksReq
@@ -81,6 +83,7 @@ func ListTaskHandler() gin.HandlerFunc {
 // @Success 200 {object} serializer.ResponseTask "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /task/:id [get]
+// @Security ApiKeyAuth
 func ShowTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req types.ShowTaskReq
@@ -110,6 +113,7 @@ func ShowTaskHandler() gin.HandlerFunc {
 // @Success 200 {object} serializer.Response "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /task/:id [delete]
+// @Security ApiKeyAuth
 func DeleteTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req types.DeleteTaskReq
@@ -139,6 +143,7 @@ func DeleteTaskHandler() gin.HandlerFunc {
 // @Success 200 {object} serializer.Response "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /task [put]
+// @Security ApiKeyAuth
 func UpdateTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		req := new(types.UpdateTaskReq)
@@ -168,6 +173,7 @@ func UpdateTaskHandler() gin.HandlerFunc {
 // @Success 200 {object} serializer.Response "{"success":true,"data":{},"msg":"ok"}"
 // @Failure 500 {json} {"status":500,"data":{},"Msg":{},"Error":"error"}
 // @Router /search [post]
+// @Security ApiKeyAuth
 func SearchTaskHandler() gin.HandlerFunc {
 	return func(ctx *gin.Context) {
 		var req types.SearchTaskReq

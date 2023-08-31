@@ -13,6 +13,9 @@ import (
 // @description This is a sample Server pets
 // @name FanOne
 // @BasePath /api/v1
+// @securityDefinitions.apikey  ApiKeyAuth
+// @in                          header
+// @name                        Authorization
 func main() { // http://localhost:3000/swagger/index.html
 	loading()
 	// 转载路由 swag init -g common.go
